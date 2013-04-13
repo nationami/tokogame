@@ -1,0 +1,50 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	color: #333;
+	font-family: "Comic Sans MS", cursive, 'lucida grande', tahoma, verdana, arial, sans-serif;
+	height: 740px;
+	
+}
+
+.button-welcome{
+	width: 300px;
+	height: 100px;
+	
+}
+
+.div-button{
+	padding: 10px 10px 10px 10px;
+}
+
+.content{
+	padding: 50px 10px 10px 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+.label-image{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#header-container{
+	padding: 5px 10px 10px 10px;
+	border-bottom: 3px solid black;
+}
+
+#footer-container{
+	padding: 5px 10px 10px 10px;
+	text-align: right;
+	border-top: 3px solid black;
+}
+
+#body-container{
+	height: 670px;
+}
+
+#content-wrapper{
+	padding: 20px 100px 100px 100px;
+}
+

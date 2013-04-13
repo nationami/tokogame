@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN"
+        "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration>
+    <ibatorContext id="tokogame" targetRuntime="Ibatis2Java5">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost/tokogame"
+                        userId="root" password=""/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.tokogame.domain"
+                            targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator
+                targetPackage="com.tokogame.sql"
+                targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <daoGenerator type="SPRING"
+                      targetPackage="com.tokogame.dao"
+                      targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </daoGenerator>
+			
+
+		<table tableName="user"/>
+		
+		
+		        
+	</ibatorContext>
+</ibatorConfiguration>
