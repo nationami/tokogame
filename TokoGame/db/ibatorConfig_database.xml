@@ -28,6 +28,7 @@
         </daoGenerator>
 			
 
+		<table tableName="koleksi"/>
 		<table tableName="user"/>
 		
 		
