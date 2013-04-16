@@ -15,6 +15,7 @@
 
 	<!-- ========================= 		DAO DEFINITIONS: COMMON 	========================= -->
     <bean id="UserDAO" class="com.tokogame.dao.UserDAOImpl" autowire="byType"/>
+    <bean id="KoleksiDAO" class="com.tokogame.dao.KoleksiDAOImpl" autowire="byType"/>
 
     
 </beans>

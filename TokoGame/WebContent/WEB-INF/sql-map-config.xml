@@ -10,6 +10,6 @@
 	
 	<!-- ========================= 	COMMON 	========================= -->
     <sqlMap resource="com/tokogame/sql/user_SqlMap.xml"/>
-
+	<sqlMap resource="com/tokogame/sql/koleksi_SqlMap.xml"/>
     
 </sqlMapConfig>

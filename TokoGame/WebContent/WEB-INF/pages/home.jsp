@@ -4,7 +4,7 @@
   	<div id="content-wrapper">
 		<div class="content">
 			<div>
-			<a href="${contextPath}/action/productList?show="><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="500px" height="200px" border="0"></a>
+			<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="500px" height="200px" border="0"></a>
 			</div>
 			<div><label class="label-image">Belanja</label></div>
 		</div>
