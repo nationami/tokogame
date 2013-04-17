@@ -48,6 +48,10 @@ public class ProductListActionBean extends BaseActionBean{
 		this.listKoleksi = listKoleksi;
 	}
 	
+	public int getSize(){
+		
+		return 0;
+	}
 	
 	
 
