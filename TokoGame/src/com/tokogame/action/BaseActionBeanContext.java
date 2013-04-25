@@ -9,6 +9,9 @@ import javax.servlet.http.HttpSession;
 import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.integration.spring.SpringHelper;
 
+import com.tokogame.domain.User;
+import com.tokogame.util.UtilConstants;
+
 /**
  * @author mardy jonathan
  *
@@ -31,6 +34,10 @@ public class BaseActionBeanContext extends ActionBeanContext {
         }
 
         return value;
+    }
+    
+    public User getUser() {
+        return getCurrent(UtilConstants.SESSION.USER, null);
     }
 
     /**

@@ -11,5 +11,8 @@
 	<!-- ========================= 	COMMON 	========================= -->
     <sqlMap resource="com/tokogame/sql/user_SqlMap.xml"/>
 	<sqlMap resource="com/tokogame/sql/koleksi_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/kategori_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/item_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/koleksi_relation_SqlMap.xml"/>
     
 </sqlMapConfig>

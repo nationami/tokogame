@@ -37,6 +37,11 @@
 <body style="background-image: url('${contextPath}/img/paper1.png')">
 	<div id="header-container">
 		<label>Toko Game</label>
+		<span class="right-part">
+			<img alt="image" src="${contextPath}/img/cart_icon.png" width="25px" height="25px" border="0" title="Cart" class="icon-btn">&nbsp;
+			<img alt="image" src="${contextPath}/img/home_icon.png" width="25px" height="25px" border="0" title="Home" class="icon-btn">&nbsp;
+			<img alt="image" src="${contextPath}/img/shutdown.png" width="25px" height="25px" border="0" title="Logout" class="icon-btn">&nbsp;
+		</span>
 	</div>
 	
 	<div id="body-container">

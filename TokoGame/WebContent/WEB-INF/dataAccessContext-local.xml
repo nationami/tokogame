@@ -16,6 +16,10 @@
 	<!-- ========================= 		DAO DEFINITIONS: COMMON 	========================= -->
     <bean id="UserDAO" class="com.tokogame.dao.UserDAOImpl" autowire="byType"/>
     <bean id="KoleksiDAO" class="com.tokogame.dao.KoleksiDAOImpl" autowire="byType"/>
-
+    <bean id="KategoriDAO" class="com.tokogame.dao.KategoriDAOImpl" autowire="byType"/>
+    <bean id="ItemDAO" class="com.tokogame.dao.ItemDAOImpl" autowire="byType"/>
+    <bean id="KoleksiRelationDAO" class="com.tokogame.dao.KoleksiRelationDAOImpl" autowire="byType"/>
     
+    <!-- ========================= 		DAO DEFINITIONS: HELPER 	========================= -->
+    <bean id="ItemHelperDAO" class="com.tokogame.dao.ItemHelperDAOImpl" autowire="byType"/>
 </beans>

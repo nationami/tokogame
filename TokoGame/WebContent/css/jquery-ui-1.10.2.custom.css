@@ -197,7 +197,7 @@
 	display: inline-block;
 	position: relative;
 	padding: 0;
-	line-height: normal;
+	line-height: 10px;
 	margin-right: .1em;
 	cursor: pointer;
 	vertical-align: middle;
@@ -229,7 +229,7 @@ button.ui-button-icons-only {
 /* button text element */
 .ui-button .ui-button-text {
 	display: block;
-	line-height: normal;
+	line-height: 10px;
 }
 .ui-button-text-only .ui-button-text {
 	padding: .4em 1em;
@@ -253,7 +253,7 @@ button.ui-button-icons-only {
 }
 /* no icon support for input elements, provide padding by default */
 input.ui-button {
-	padding: .4em 1em;
+	padding: 0.4em 0.4em;
 }
 
 /* button icon element(s) */
@@ -785,7 +785,7 @@ body .ui-tooltip {
 ----------------------------------*/
 .ui-widget {
 	font-family: Comic Sans MS, cursive, 'lucida grande', tahoma, verdana, arial, sans-serif;
-	font-size: 1.4em;
+	font-size: 16px;
 }
 .ui-widget .ui-widget {
 	font-size: 1em;

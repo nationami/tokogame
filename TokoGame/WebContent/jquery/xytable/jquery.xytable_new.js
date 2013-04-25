@@ -78,6 +78,8 @@
             },
             pager: {					// pager object, when not empty will generate pagination
                 id:'pager', base:'', pos: 'bottom',
+                //enable goto
+                gotopage: true,
                 // offset, index of start record
                 offset: 0,
                 // page is current page, total is total pages, records is total records
@@ -660,7 +662,7 @@
                 // show inactive nextprev only
                 else if (opts.showInactiveNextPrev) {container.find('a.nextprev.inactive').show();}
                
-                if (opts['goto']) {
+                if (opts['gotopage']) {
                     gotoStr = $.xytable.messages['xytable.pager.goto.label']+'&nbsp;<input type="text" class="field goto" id="'+this.settings.id+'Goto"/>';
                     container.find('.index').append(gotoStr);
                     // listen to keyup event on goto field
@@ -674,7 +676,7 @@
                         }
                         // enter key detected
                         if (e.keyCode === 13) {                            
-                            val = $(this).val() > opts.total ? opts.total : val;
+                            val = $(this).val() > opts.total ? opts.total : $(this).val();
                             // setup offset value
                             url += (val * opts.rows) - opts.rows;
                             // when ajax call callback

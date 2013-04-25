@@ -50,6 +50,24 @@ $(function(){
 		
 	    }, 1000);	
 	
-/*End handle the date and time*/
+/* End handle the date and time */
+	
+/* Make the style of button */
+	$( "input[type=submit], input[type=button], button" ).button();
+
+/* End make the style of button */
+	
+/* Make button set */
+	$("#button-set" ).buttonset();
+	
+/* End make button set */
+			
 	
 });
+
+/* Function to open the dialog */	
+function openDialog(name, primary){
+	$('#primary_id').val(primary);
+	$('#'+name).dialog("open");
+};
+/* End function to open the dialog */

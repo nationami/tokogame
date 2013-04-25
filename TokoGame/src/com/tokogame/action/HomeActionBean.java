@@ -5,6 +5,7 @@ package com.tokogame.action;
 
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.UrlBinding;
 
@@ -25,6 +26,10 @@ public class HomeActionBean extends BaseActionBean{
 	public Resolution personal(){
 		
 		return show();
+	}
+	
+	public Resolution member(){
+		return new RedirectResolution(LoginActionBean.class);
 	}
 
 }

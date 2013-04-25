@@ -57,12 +57,12 @@
 	
 	
 	
-	<!--tx:advice id="txAdvice" transaction-manager="transactionManager">
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="save*"/>
 			<tx:method name="delete*"/>
 			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
-	</tx:advice-->
+	</tx:advice>
 		
 </beans>

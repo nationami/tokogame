@@ -28,7 +28,10 @@
         </daoGenerator>
 			
 
-		<table tableName="koleksi"/>
+        <!-- <table tableName="item"/> -->
+        <!-- <table tableName="kategori"/> -->
+		<!-- <table tableName="koleksi"/> -->
+		<!-- <table tableName="koleksi_relation"/> -->
 		<table tableName="user"/>
 		
 		

@@ -54,13 +54,13 @@ TABLE.ui-xytable TR:hover TD {
 	DISPLAY: inline; FLOAT: right
 }
 .ui-xytable-pager A {
-	BORDER: #3B5998 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(images/pagging.gif) repeat-x 0px 0px; FLOAT: left; HEIGHT: 20px; COLOR: #3B5998; MARGIN-LEFT: 5px; TEXT-DECORATION: none; PADDING-TOP: 0px
+	BORDER: #085977 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(images/pagging.gif) repeat-x 0px 0px; FLOAT: left; HEIGHT: 20px; COLOR: #085977; MARGIN-LEFT: 5px; TEXT-DECORATION: none; PADDING-TOP: 0px
 }
 .ui-xytable-pager A:hover {
-	BACKGROUND: #3B5998; COLOR: #fff; border: #627AAD;
+	BACKGROUND: #085977; COLOR: #fff; border: #627AAD;
 }
 .ui-xytable-pager A.current {
-	FONT-WEIGHT: bold; BORDER: #627AAD 1px solid; BACKGROUND: #3B5998; color: #fff;
+	FONT-WEIGHT: bold; BORDER: #085977 1px solid; BACKGROUND: #085977; color: #fff;
 }
 A.inactive {
 	FONT-WEIGHT: bold
