@@ -23,6 +23,9 @@
 <script src="${contextPath}/jquery/xytable/jquery.xytable_new.js"></script>
 <link href="${contextPath}/jquery/xytable/xytable.css" rel="stylesheet" type="text/css"/>
 
+<!-- *****************Link For Video***************** -->
+<script src="${contextPath}/js/video.js"></script>
+
 <!-- *****************Link For Javascript***************** -->
 <script src="${contextPath}/js/common.js"></script>
 
@@ -30,7 +33,7 @@
 <link href="${contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/sidebarmenu.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
-
+<link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css"/>
 
 <stripes:layout-component name="init"/>
 </head>

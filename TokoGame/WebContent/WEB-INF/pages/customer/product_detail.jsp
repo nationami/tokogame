@@ -3,7 +3,7 @@
   	<stripes:layout-component name="content">
 	  	<div id="content-wrapper">
 	  		<!-- menu left sidebar -->
-			<div class="left-sided">
+			<div class="left-sided" style="padding-left: 100px;">
 	  			<div>
 					<ul class="list-down">
 						<li>
@@ -24,14 +24,13 @@
 	  			<div>
 					<ul class="list-down">
 						<li>
-							<video id="videoDetail" width="800" height="450" controls autoplay>
-							  <source src="${contextPath}/video/LF-LC_An_Inside_Look.mp4" type="video/mp4">
-							  <source src="movie.mp4" type="video/mp4">
-							  <source src="movie.webm" type="video/webm">
-							  <object data="movie.mp4" width="900" height="450">
-							    <embed width="900" height="450" src="movie.swf">
-							  </object>
-							</video>							
+							<video id="video_detail" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+								      data-setup="{}">
+							    <source src="${contextPath}/video/LF-LC_An_Inside_Look.mp4" type='video/mp4' />
+							    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+							    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+							    <track kind="captions" src="captions.vtt" srclang="en" label="English" />
+							 </video>						
 						</li>
 						<li>
 							<fieldset class="info-fieldset">

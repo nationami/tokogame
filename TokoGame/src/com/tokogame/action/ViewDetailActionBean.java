@@ -23,8 +23,8 @@ public class ViewDetailActionBean extends BaseActionBean{
 	@DefaultHandler
 	public Resolution show() {
 		// TODO Auto-generated method stub
-//		return new ForwardResolution("/WEB-INF/pages/customer/product_detail.jsp");
-		return new ForwardResolution("/WEB-INF/pages/testing/testing.jsp");
+		return new ForwardResolution("/WEB-INF/pages/customer/product_detail.jsp");
+//		return new ForwardResolution("/WEB-INF/pages/testing/testing.jsp");
 	}
 
 	
