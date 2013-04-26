@@ -16,7 +16,7 @@ import com.tokogame.domain.KoleksiExample;
  * @author mardy jonathan
  *
  */
-@Service("koleksiListService")
+@Service("koleksiService")
 public class KoleksiMaintenanceServiceImpl implements KoleksiMaintenanceService{
 
 	@Autowired
