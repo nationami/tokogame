@@ -11,7 +11,7 @@
 	  					<br/>
 					    <video id="videoDetail">
 					    	<source src="${contextPath}/video/LF-LC_An_Inside_Look.mp4" type="video/mp4"> 
-					      	Your broser does not support the video
+					      	Your broser does not support the video html5
 					    </video>  							
 						
 				</div>
