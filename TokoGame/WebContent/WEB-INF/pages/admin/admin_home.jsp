@@ -7,7 +7,7 @@
 			<div class="icon-gap">
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/userMaintenance"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>
@@ -57,7 +57,7 @@
 				</div>
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/kategoriMaintenance"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>
