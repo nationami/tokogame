@@ -15,7 +15,7 @@ import com.tokogame.domain.Kategori;
 import com.tokogame.service.KategoriMaintenanceService;
 
 /**
- * @author mardy jonathan
+ * @author willyam surya
  *
  */
 @UrlBinding("/action/kategoriMaintenance")

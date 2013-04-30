@@ -19,7 +19,7 @@ import com.tokogame.service.UserMaintenanceService;
 import com.tokogame.service.PasswordEncryptor;
 
 /**
- * @author mardy jonathan
+ * @author willyam surya
  *
  */
 @UrlBinding("/action/userMaintenance")
