@@ -65,7 +65,7 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 	}
 	
 	public Resolution save(){
-		if(user.getUserId()==null){
+		if(user.getPkUser()==null){
 			if(user.getPassword()!=null)
 			{
 				PasswordEncryptor encrypt = new PasswordEncryptorImpl();
@@ -83,7 +83,7 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 				userMaintenanceService.insertUser(user);	
 			}
 		}
-		else if(user.getUserId()!=null)
+		else if(user.getPkUser()!=null)
 		{
 			if (user.getPassword() == null)
 			{
@@ -99,9 +99,9 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 				}
 				else
 				{
-						user.setActive(1);
+					user.setActive(1);
 				}
-				userMaintenanceService.updateUser(user);
+				userMaintenanceService.updateUserSelective(user);
 			}
 			else if(user.getPassword() != null)
 			{

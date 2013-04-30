@@ -27,8 +27,8 @@ public class UserMaintenanceServiceImpl implements UserMaintenanceService{
 		// TODO Auto-generated method stub
 		UserExample userExample = new UserExample();
 		UserExample.Criteria criteria = userExample.createCriteria();
-		if(user.getUserId()!=null){
-			criteria.andUserIdEqualTo(user.getUserId());
+		if(user.getPkUser()!=null){
+			criteria.andPkUserEqualTo(user.getPkUser());
 		}
 		if(user.getUserLogin()!=null){
 			criteria.andUserLoginEqualTo(user.getUserLogin());
@@ -48,12 +48,17 @@ public class UserMaintenanceServiceImpl implements UserMaintenanceService{
 		// TODO Auto-generated method stub
 		userDAO.updateByPrimaryKey(user);
 	}
+	
+	public void updateUserSelective(User user) {
+		// TODO Auto-generated method stub
+		userDAO.updateByPrimaryKeySelective(user);
+	}
 
 	@Override
 	public void deleteUser(User user) {
 		// TODO Auto-generated method stub
-		int userId = user.getUserId();
-		userDAO.deleteByPrimaryKey(userId);
+		int pkUser = user.getPkUser();
+		userDAO.deleteByPrimaryKey(pkUser);
 	}
 	
 	

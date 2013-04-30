@@ -13,7 +13,7 @@
 					<c:forEach items="${actionBean.listUser}" var="user" varStatus="loop" begin="${actionBean.offset}" end="${actionBean.offset+9}" step="1">
 						<tr>
 							<td>	
-								${user.userId}
+								${user.pkUser}
 							</td>
 							<td>	
 								${user.userLogin}
@@ -27,10 +27,10 @@
 							</td>
 							<td>
 								<span>
-									<a href="${contextPath}/action/userMaintenance?edit=&user.userId=${user.userId}">Edit</a>
+									<a href="${contextPath}/action/userMaintenance?edit=&user.pkUser=${user.pkUser}">Edit</a>
 								</span>
 								<span>
-									<a href="#" onclick="openDialog('dialog-confirm',${user.userId});return false;">Delete</a>
+									<a href="#" onclick="openDialog('dialog-confirm',${user.pkUser});return false;">Delete</a>
 								</span>	
 							</td>
 						</tr>
@@ -48,7 +48,7 @@
 			$(function() {
 				$('#user_list').xytable({
 					colModel: [   
-								{name:'userId', label:'ID', field:'userId', hidden:true}, 
+								{name:'pkUser', label:'ID', field:'pkUser', hidden:true}, 
 								{name:'userLogin', field:'userLogin', label: 'UserLogin'},        					        
 					            {name:'role', label:'Role', field:'role'},
 					            {name:'active', label:'Active', field:'active'},
@@ -73,7 +73,7 @@
 					autoOpen: false,
 					buttons: {
 						"Delete" : function(){
-							window.location = '${contextPath}/action/userMaintenance?delete=&user.userId='+$("#primary_id").val();
+							window.location = '${contextPath}/action/userMaintenance?delete=&user.pkUser='+$("#primary_id").val();
 						},
 						Cancel : function(){
 							$(this).dialog("close");

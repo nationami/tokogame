@@ -45,7 +45,7 @@
 		  			</td>
 		  			<td>
 		  				<input type="text" name="user.userLogin" value="${actionBean.user.userLogin}" autofocus="autofocus" required="required"/>
-		  				<input type="hidden" name="user.userId" value="${actionBean.user.userId}"/>
+		  				<input type="hidden" name="user.pkUser" value="${actionBean.user.pkUser}"/>
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -61,7 +61,14 @@
 		  				<label>Password</label>
 		  			</td>
 		  			<td>
-		  				<input type="password" name="user.password" value=""></input>
+		  				<c:choose>
+		  					<c:when test="${actionBean.user.pkUser !=null}">
+		  						<input type="password" name="user.password" value=""/>
+		  					</c:when>
+		  					<c:when test="${actionBean.user.pkUser == null}">
+		  						<input type="password" name="user.password" value="" autofocus="autofocus" required="required"/>
+		  					</c:when>
+		  				</c:choose>
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -110,11 +117,11 @@
 		  			<td>
 		  				<c:choose>
 		  					<c:when test="${actionBean.user.active == '1'}">
-		  						<input type="checkbox" name="user.active" checked="checked"></input>
+		  						<input type="checkbox" name="user.active" checked="checked" value="1"></input>
 		  					</c:when>
-		  					<c:otherwise>
-		  						<input type="checkbox" name="user.active"></input>
-		  					</c:otherwise>
+		  					<c:when test="${actionBean.user.active == '0'}">
+		  						<input type="checkbox" name="user.active" value="0"></input>
+		  					</c:when>
 		  				</c:choose>
 		  			</td>
 	  			</tr>
