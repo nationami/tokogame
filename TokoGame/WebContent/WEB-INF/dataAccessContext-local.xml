@@ -19,7 +19,12 @@
     <bean id="KategoriDAO" class="com.tokogame.dao.KategoriDAOImpl" autowire="byType"/>
     <bean id="ItemDAO" class="com.tokogame.dao.ItemDAOImpl" autowire="byType"/>
     <bean id="KoleksiRelationDAO" class="com.tokogame.dao.KoleksiRelationDAOImpl" autowire="byType"/>
+    <bean id="BelanjaDAO" class="com.tokogame.dao.BelanjaDAOImpl" autowire="byType"/>
+    <bean id="BelanjaDetailDAO" class="com.tokogame.dao.BelanjaDetailDAOImpl" autowire="byType"/>
+    <bean id="SequenceDAO" class="com.tokogame.dao.SequenceDAOImpl" autowire="byType"/>
     
     <!-- ========================= 		DAO DEFINITIONS: HELPER 	========================= -->
     <bean id="ItemHelperDAO" class="com.tokogame.dao.ItemHelperDAOImpl" autowire="byType"/>
+    <bean id="CartHelperDAO" class="com.tokogame.dao.CartHelperDAOImpl" autowire="byType"/>
+    <bean id="BelanjaDetailHelperDAO" class="com.tokogame.dao.BelanjaDetailHelperDAOImpl" autowire="byType"/>
 </beans>

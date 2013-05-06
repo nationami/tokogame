@@ -11,6 +11,11 @@ a {
 	text-decoration: none;
 }
 
+h3{
+	padding: 0;
+	margin: 0;
+}
+
 #header-container{
 	padding: 5px 10px 10px 10px;
 	border-bottom: 3px solid black;
@@ -145,7 +150,7 @@ a {
 }
 
 .list-down li{
-	padding:15px;
+	padding:10px;
 }
 
 .video-box{
@@ -155,7 +160,7 @@ a {
 
 .reqBox{
 	width: 420px;
-	height:420px;
+	height:330px;
 	padding: 0px;
 	background-color: #f2f2f2;
 	border: 1px #C7C7C7 solid;
@@ -180,11 +185,42 @@ a {
 
 .info-fieldset{
 	background-color: #f2f2f2;
-	height:140px;
+	height:190px;
+	width: 770px;
 }
 
 .info-fieldset legend{
 	color: #085977;
 	border: 1px #C7C7C7 solid;
 	
+}
+
+.title-info{
+	padding: 0px 0px 0px 600px;
+}
+
+.autentikasiBox{
+	width: 450px;
+	margin:auto;
+	margin-top:150px;
+	padding: 5px;
+	background-color: #f2f2f2;
+	border: 1px #C7C7C7 solid;
+	
+	-moz-border-radius: 7px;
+	border-radius: 7px;		
+	
+	-moz-box-shadow: 0px 0px 5px #B3B3B3;
+	-webkit-box-shadow: 0px 0px 5px #B3B3B3;
+	box-shadow: 0px 0px 5px #B3B3B3;
+	
+	text-align: left;
+}
+
+.progress-label{
+	float: left;
+	margin-left: 40%;
+	margin-top: 2px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
 }

@@ -61,6 +61,7 @@ public class LoginActionBean extends BaseActionBean{
 			
 			if(userResult!=null){
 				setSessionAttribute(UtilConstants.SESSION.USER, userResult);
+				setSessionAttribute(UtilConstants.SESSION.ROLE, userResult.getRole());
 				if(UtilConstants.ROLE.MEMBER.equalsIgnoreCase(userResult.getRole())){
 					return new RedirectResolution(HomeActionBean.class);
 				}
@@ -78,7 +79,8 @@ public class LoginActionBean extends BaseActionBean{
 		return this.show();
 	}
 
-
+	/* Setter & Getter     */
+	
 	public String getUser() {
 		return user;
 	}

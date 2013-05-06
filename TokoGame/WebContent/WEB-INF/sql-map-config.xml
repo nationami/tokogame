@@ -14,5 +14,11 @@
 	<sqlMap resource="com/tokogame/sql/kategori_SqlMap.xml"/>
 	<sqlMap resource="com/tokogame/sql/item_SqlMap.xml"/>
 	<sqlMap resource="com/tokogame/sql/koleksi_relation_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/belanja_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/belanja_detail_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/sequence_SqlMap.xml"/>
+	
+	<!-- ========================= 	HELPER 	========================= -->
+	<sqlMap resource="com/tokogame/sql/belanja_detail_helper_SqlMap.xml"/>
     
 </sqlMapConfig>

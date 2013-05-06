@@ -4,7 +4,7 @@
   	<div id="content-wrapper">
   		<div id="dialog-confirm" title="Delete Confirmation">Are you sure want to delete?</div>
 		<div>
-			<div class="right-part">
+			<div align="right">
 				<a href="${contextPath}/action/koleksiMaintenance?add="><img alt="image" src="${contextPath}/img/plus.png" width="50px" height="50px" border="0" title="Add"></a>
 				<input type="hidden" name="primaryId"  id="primary_id">
 			</div>
@@ -43,6 +43,21 @@
 	<stripes:layout-component name="init">
 		<script>
 			$(function() {
+				$('#dialog-confirm').dialog({
+					modal: true,
+					autoOpen: false,
+					open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+					buttons: {
+						"Delete" : function(){
+							window.location = '${contextPath}/action/koleksiMaintenance?delete=&koleksi.pkKoleksi='+$("#primary_id").val();
+						},
+						Cancel : function(){
+							$(this).dialog("close");
+						}
+					}
+					
+				});
+				
 				$('#koleksi_list').xytable({
 					colModel: [   
 								{name:'pkKoleksi', label:'ID', field:'pk_koleksi', hidden:true}, 
@@ -64,19 +79,6 @@
 				        	
 				});
 				
-				$('#dialog-confirm').dialog({
-					modal: true,
-					autoOpen: false,
-					buttons: {
-						"Delete" : function(){
-							window.location = '${contextPath}/action/koleksiMaintenance?delete=&koleksi.pkKoleksi='+$("#primary_id").val();
-						},
-						Cancel : function(){
-							$(this).dialog("close");
-						}
-					}
-					
-				});
 					
 				
 			});

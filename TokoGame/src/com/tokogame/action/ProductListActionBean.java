@@ -3,6 +3,7 @@
  */
 package com.tokogame.action;
 
+import java.util.HashMap;
 import java.util.List;
 
 import net.sourceforge.stripes.action.DefaultHandler;
@@ -87,8 +88,10 @@ public class ProductListActionBean extends BaseActionBean{
 	}
 	
 	public Resolution viewDetail(){
-		
-		return new RedirectResolution(ViewDetailActionBean.class);
+		HashMap<String, Object> hashmap = new HashMap<String, Object>();
+		hashmap.put("show", "");			
+		hashmap.put("itemId", itemId);
+		return new RedirectResolution(ViewDetailActionBean.class).addParameters(hashmap);
 	}
 
 	

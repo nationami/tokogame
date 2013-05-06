@@ -60,8 +60,7 @@ $(function(){
 /* Make button set */
 	$("#button-set" ).buttonset();
 	
-/* End make button set */
-			
+/* End make button set */	
 	
 });
 
@@ -71,3 +70,4 @@ function openDialog(name, primary){
 	$('#'+name).dialog("open");
 };
 /* End function to open the dialog */
+

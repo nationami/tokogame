@@ -28,6 +28,15 @@ public class KoleksiMaintenanceActionBean extends BaseActionBean{
 	@SpringBean
 	private KoleksiMaintenanceService koleksiMaintenanceService;
 	
+	//function to create offset position paging of the table
+	private void makeOffset(String param) {
+		try {
+			this.setOffset(Integer.parseInt(this.context.getRequest()
+					.getParameter(param)));
+		} catch (Exception e) {
+		}
+	} 
+	
 	@Override
 	@DefaultHandler
 	public Resolution show() {
@@ -37,6 +46,7 @@ public class KoleksiMaintenanceActionBean extends BaseActionBean{
 	
 	public Resolution search(){
 		Koleksi koleksi = new Koleksi();
+		makeOffset("koleksi_list.offset");
 		listKoleksi = koleksiMaintenanceService.getKoleksiList(koleksi);
 		
 		return new ForwardResolution("/WEB-INF/pages/admin/koleksi_maintenance.jsp");

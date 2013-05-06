@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <!-- ********************Title********************* -->
 <title>Toko Game | ${title} </title>
@@ -25,6 +26,7 @@
 
 <!-- *****************Link For Video***************** -->
 <script src="${contextPath}/js/video.js"></script>
+<script src="${contextPath}/js/video-quality.js"></script>
 
 <!-- *****************Link For Javascript***************** -->
 <script src="${contextPath}/js/common.js"></script>
@@ -33,7 +35,7 @@
 <link href="${contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/sidebarmenu.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
-<link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css"/>
+<link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css" media='all'/>
 
 <stripes:layout-component name="init"/>
 </head>
@@ -41,7 +43,7 @@
 	<div id="header-container">
 		<label>Toko Game</label>
 		<span class="right-part">
-			<img alt="image" src="${contextPath}/img/cart_icon.png" width="25px" height="25px" border="0" title="Cart" class="icon-btn">&nbsp;
+			<a href="${contextPath}/action/cart"><img alt="image" src="${contextPath}/img/cart_icon.png" width="25px" height="25px" border="0" title="Cart" class="icon-btn"></a>&nbsp;
 			<img alt="image" src="${contextPath}/img/home_icon.png" width="25px" height="25px" border="0" title="Home" class="icon-btn">&nbsp;
 			<img alt="image" src="${contextPath}/img/shutdown.png" width="25px" height="25px" border="0" title="Logout" class="icon-btn">&nbsp;
 		</span>
@@ -55,5 +57,6 @@
 		<label>Date & Time :&nbsp;<span id="date"></span>&nbsp;<span id="hours"></span>:<span id="min"></span>:<span id="sec"></span></label>
 	</div>
 </body>
+<stripes:layout-component name="closing"/>
 </html>
 </stripes:layout-definition>

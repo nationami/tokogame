@@ -2,8 +2,14 @@
 <stripes:layout-render name="/WEB-INF/pages/layout.jsp" title="Product Detail">
   	<stripes:layout-component name="content">
 	  	<div id="content-wrapper">
+	  	<stripes:form action="/action/viewDetail" id="detail_form">
+	  		<div align="left" class="title-info">
+	  			<h3>${actionBean.item.itemName}</h3>
+	  			<stripes:hidden name="itemId"/>
+	  			<input type="hidden" name="harga" value="${actionBean.item.harga}"/>
+	  		</div>
 	  		<!-- menu left sidebar -->
-			<div class="left-sided" style="padding-left: 100px;">
+			<div class="left-sided">
 	  			<div>
 					<ul class="list-down">
 						<li>
@@ -24,18 +30,17 @@
 	  			<div>
 					<ul class="list-down">
 						<li>
-							<video id="video_detail" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
-								      data-setup="{}">
-							    <source src="${contextPath}/video/LF-LC_An_Inside_Look.mp4" type='video/mp4' />
-							    <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-							    <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
-							    <track kind="captions" src="captions.vtt" srclang="en" label="English" />
-							 </video>						
+							<video id="video_detail" class="video-js vjs-default-skin" controls preload="auto" width="800" height="360"
+								data-setup="{}">
+							    <source data-res="480" src="${contextPath}/video/LF-LC_An_Inside_Look.mp4" type='video/mp4' />
+							    
+							    
+							 </video>
 						</li>
 						<li>
 							<fieldset class="info-fieldset">
 								<legend>Informasi Produk</legend>
-								Ini merupakan game terbaru dengan daya tarik yang tinggi.
+								${actionBean.item.informasiProduk}
 							</fieldset>							
 						</li>
 					</ul>
@@ -47,13 +52,13 @@
 	  			<div>
 					<ul class="list-down">
 						<li class="reqBox">
-							testing							
+							${actionBean.item.informasiLain}							
 						</li>
 						<li></li>
 						<li></li>
 						<li></li>
-						<li class="center-button" style="padding: 18px 0px 0px 0px">
-							Harga : Rp50000,-
+						<li class="center-button" style="padding: 110px 0px 0px 0px">
+							<strong>Harga : <fmt:formatNumber type="currency" currencySymbol="Rp" value="${actionBean.item.harga}"/></strong>
 						</li>
 						<li class="center-button" style="padding: 0px">
 							<input type="submit" value="         Beli        " name="beli" width="30px">							
@@ -61,7 +66,7 @@
 					</ul>
 				</div>
 	  		</div>
-	  		
+	  	</stripes:form>	
 	  	</div>
 	</stripes:layout-component>
 	

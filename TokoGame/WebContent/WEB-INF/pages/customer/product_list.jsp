@@ -151,6 +151,8 @@
 				}
 				
 				$(".item-click").click(function(){
+					var id = $(this).children().eq(1).html();
+					$('#itemId').val(id);
 					$("#main_form").attr("action",$("#main_form").attr("action")+"?viewDetail=");
 					$('#main_form').submit();
 				});

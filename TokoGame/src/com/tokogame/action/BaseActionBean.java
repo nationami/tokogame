@@ -3,6 +3,7 @@
  */
 package com.tokogame.action;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -50,7 +51,7 @@ public abstract class BaseActionBean implements ActionBean, ValidationErrorHandl
 	
 
 	@DefaultHandler
-	abstract public Resolution show();
+	abstract public Resolution show() throws IOException;
 
 	
 
