@@ -5,8 +5,4 @@
 <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/tokogame" password="" removeAbandoned="true" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/tokogame" username="root"/>
 
 
-
-asdadsa
-
-
 ottffssent
