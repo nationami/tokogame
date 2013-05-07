@@ -5,8 +5,6 @@ package com.tokogame.action;
 
 import java.util.List;
 
-import sun.security.util.Password;
-
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
@@ -14,11 +12,11 @@ import net.sourceforge.stripes.action.UrlBinding;
 import net.sourceforge.stripes.integration.spring.SpringBean;
 
 import com.tokogame.domain.User;
+import com.tokogame.service.EmailValidator;
 import com.tokogame.service.EmailValidatorImpl;
+import com.tokogame.service.PasswordEncryptor;
 import com.tokogame.service.PasswordEncryptorImpl;
 import com.tokogame.service.UserMaintenanceService;
-import com.tokogame.service.PasswordEncryptor;
-import com.tokogame.service.EmailValidator;
 
 /**
  * @author willyam surya

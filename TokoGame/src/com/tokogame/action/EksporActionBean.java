@@ -60,64 +60,64 @@ public class EksporActionBean extends BaseActionBean{
 		String fileExt = fileName.substring(fileName.lastIndexOf(".")+1);
 		String appType = "";
 		
-		switch(fileExt) {
-	        case "pdf":
-	        	appType = "application/pdf";
-	            break;
-	        case "exe":
-	        	appType = "application/octet-stream";
-	            break;
-	        case "zip":
-	        	appType = "application/zip";
-	            break;
-	        case "doc":
-	        	appType = "application/msword";
-	            break;
-	        case "xls":
-	        	appType = "application/vnd.ms-excel";
-	            break;
-	        case "ppt":
-	        	appType = "application/vnd.ms-powerpoint";
-	            break;
-	        case "gif":
-	        	appType = "image/gif";
-	            break;
-	        case "png":
-	        	appType = "image/png";
-	            break;
-	        case "jpeg":
-	        	appType = "image/jpg";
-	            break;
-	        case "jpg":
-	        	appType = "image/jpg";
-	            break;
-	        case "mp3":
-	        	appType = "audio/mpeg";
-	            break;
-	        case "wav":
-	        	appType = "audio/x-wav";
-	            break;
-	        case "mpeg":
-	        	appType = "video/mpeg";
-	            break;
-	        case "mpg":
-	        	appType = "video/mpeg";
-	            break;
-	        case "mpe":
-	        	appType = "video/mpeg";
-	            break;
-	        case "mov":
-	        	appType = "video/quicktime";
-	            break;
-	        case "avi":
-	        	appType = "video/x-msvideo";
-	            break;
-	        case "src":
-	        	appType = "plain/text";
-	            break;
-	        default:
-	        	appType = "application/force-download";
-	    }
+//		switch(fileExt) {
+//	        case "pdf":
+//	        	appType = "application/pdf";
+//	            break;
+//	        case "exe":
+//	        	appType = "application/octet-stream";
+//	            break;
+//	        case "zip":
+//	        	appType = "application/zip";
+//	            break;
+//	        case "doc":
+//	        	appType = "application/msword";
+//	            break;
+//	        case "xls":
+//	        	appType = "application/vnd.ms-excel";
+//	            break;
+//	        case "ppt":
+//	        	appType = "application/vnd.ms-powerpoint";
+//	            break;
+//	        case "gif":
+//	        	appType = "image/gif";
+//	            break;
+//	        case "png":
+//	        	appType = "image/png";
+//	            break;
+//	        case "jpeg":
+//	        	appType = "image/jpg";
+//	            break;
+//	        case "jpg":
+//	        	appType = "image/jpg";
+//	            break;
+//	        case "mp3":
+//	        	appType = "audio/mpeg";
+//	            break;
+//	        case "wav":
+//	        	appType = "audio/x-wav";
+//	            break;
+//	        case "mpeg":
+//	        	appType = "video/mpeg";
+//	            break;
+//	        case "mpg":
+//	        	appType = "video/mpeg";
+//	            break;
+//	        case "mpe":
+//	        	appType = "video/mpeg";
+//	            break;
+//	        case "mov":
+//	        	appType = "video/quicktime";
+//	            break;
+//	        case "avi":
+//	        	appType = "video/x-msvideo";
+//	            break;
+//	        case "src":
+//	        	appType = "plain/text";
+//	            break;
+//	        default:
+//	        	appType = "application/force-download";
+//	    }
 		
 		
 		response.setContentType(appType);
