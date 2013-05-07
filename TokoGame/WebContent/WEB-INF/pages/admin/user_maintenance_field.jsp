@@ -1,24 +1,5 @@
 <%@ include file="/WEB-INF/pages/taglibs.jsp" %>
 <script type="text/javascript">
-		//function checkNumber jika memakukan non angka maka akan langsung dihapus
-	  	function checkNumber(obj){
-	  		var pola = "^";
-	  		pola += "[0-9]*";
-	  		pola += "$";
-	  		rx = new RegExp(pola);
-	  		
-	  		if(!obj.value.match(rx)){
-	  			if(obj.lastMatched){
-	  				obj.value = obj.lastMatched;
-	  			}
-	  			else{
-	  				obj.value = "";
-	  			}
-	  		}
-	  		else{
-	  			obj.lastMatched = obj.value;
-	  		}
-	  	}
 		//function checkIt jika memasukan non angka maka akan langsung keluar msgbox
 	  	function checkIt(evt){
 	  		evt = (evt) ? evt : window.event
@@ -29,6 +10,52 @@
 	  		}
 	  		return true;
 	  	}
+		
+		$(document).ready(function(){
+			$('#login_form').validate({
+				rules:{
+					handphone:{
+						digits: true,
+						minlength:10
+					}
+			},
+			messages: {
+				handphone: {
+					required : "kolom harus diisi",
+					minlength : "Minimal 10 digit"
+				}
+			}
+		});
+		});
+		
+		function limitlength(obj, length){
+			var maxlength=length
+			if (handphone.value.length<maxlength)
+			//obj.value=obj.value.substring(0, maxlength)
+			alert(handphone.value.length)	
+		}
+		
+		function validatePhone(field,alertxt){
+			with(field){
+				if(value.length > 10){
+					alert(alertxt);
+					return false;
+				}
+				for (i=0;i<value.length;i++){
+					if(parseInt(value[i])== NaN){
+						alert(alertxt);
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		function validateForm(thisform){
+			if(validatePhone(handphone,"Invalid phone number")== false){
+				handphone.focus();
+				return false;
+			}
+		}
 </script>
 <stripes:layout-render name="/WEB-INF/pages/layout.jsp" title="User Maintenance">
   	<stripes:layout-component name="content">
@@ -37,6 +64,8 @@
 			<div class="menu-header">
 				Input User
 			</div>
+			<stripes:errors></stripes:errors>
+			<stripes:messages/>
 	  		<stripes:form action="/action/userMaintenance" id="login_form">
 	  		<table border="0">
 	  			<tr>
@@ -44,7 +73,12 @@
 		  				<label>User Login</label>
 		  			</td>
 		  			<td>
-		  				<input type="text" name="user.userLogin" value="${actionBean.user.userLogin}" autofocus="autofocus" required="required"/>
+		  				<c:if test="${actionBean.user.pkUser != null}">
+		  					<input type="text" name="user.userLogin" value="${actionBean.user.userLogin}" autofocus="autofocus" required="required" disabled="disabled"/>
+		  				</c:if>
+		  				<c:if test="${actionBean.user.pkUser == null}">
+		  					<input type="text" name="user.userLogin" value="${actionBean.user.userLogin}" autofocus="autofocus" required="required"/>
+		  				</c:if>
 		  				<input type="hidden" name="user.pkUser" value="${actionBean.user.pkUser}"/>
 		  			</td>
 	  			</tr>
@@ -76,7 +110,24 @@
 		  				<label>No. Handphone</label>
 		  			</td>
 		  			<td>
-		  				<input type="text" name="user.handphone" maxlength="12" onkeyup="return checkNumber(this);" value="${actionBean.user.handphone}" autofocus="autofocus" required="required"/>
+		  				<input type="text" id="handphone" name="user.handphone" maxlength="12" onkeypress="return checkNumber(this)"
+		  				value="${actionBean.user.handphone}" autofocus="autofocus" required="required"/>
+		  			</td>
+	  			</tr>
+	  			<tr>
+	  				<td valign="top">
+		  				<label>E-mail</label>
+		  			</td>
+		  			<td>
+		  				<input type="text" id="email" name="user.email" value="${actionBean.user.email}" autofocus="autofocus" required="required"/>
+		  			</td>
+	  			</tr>
+	  			<tr>
+	  				<td valign="top">
+		  				<label>Address</label>
+		  			</td>
+		  			<td>		  			
+		  				<textarea id="address" name="user.address" cols="17" rows="5" autofocus="autofocus" required>${actionBean.user.address}</textarea>  
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -119,7 +170,7 @@
 		  					<c:when test="${actionBean.user.active == '1'}">
 		  						<input type="checkbox" name="user.active" checked="checked" value="1"></input>
 		  					</c:when>
-		  					<c:when test="${actionBean.user.active == '0'}">
+		  					<c:when test="${actionBean.user.active == null || actionBean.user.active == '0'}">
 		  						<input type="checkbox" name="user.active" value="0"></input>
 		  					</c:when>
 		  				</c:choose>

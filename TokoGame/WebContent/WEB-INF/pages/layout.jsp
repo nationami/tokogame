@@ -17,6 +17,9 @@
 <script src="${contextPath}/jquery/jquery-ui-1.10.2.custom.js"></script>
 <script src="${contextPath}/jquery/sidebarmenu.js"></script>
 
+<!-- *****************Link For Validate***************** -->
+<script src="${contextPath}/jquery/jquery.validate.js"></script>
+
 <!-- *****************Link For Xytable***************** -->
 <script src="${contextPath}/jquery/xytable/jquery.ba-bbq.min.js"></script>
 <script src="${contextPath}/jquery/xytable/jquery.tablesorter.min.js"></script>
@@ -36,6 +39,30 @@
 <link href="${contextPath}/css/sidebarmenu.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css" media='all'/>
+
+<!-- ********************Function Javascript********************* -->
+<script type="text/javascript">
+		//function checkNumber jika memakukan non angka maka akan langsung dihapus
+	  	function checkNumber(obj){
+			//alert(obj.value);
+	  		var pola = "^";
+	  		pola += "[0-9]*";
+	  		pola += "$";
+	  		rx = new RegExp(pola);
+	  		
+	  		if(!obj.value.match(rx)){
+	  			if(obj.lastMatched){
+	  				obj.value = obj.lastMatched;
+	  			}
+	  			else{
+	  				obj.value = "";
+	  			}
+	  		}
+	  		else{
+	  			obj.lastMatched = obj.value;
+	  		}
+	  	}
+</script>
 
 <stripes:layout-component name="init"/>
 </head>

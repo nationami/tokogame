@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="belanja_helper">
+    	
+	<select id="selectBelanja" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+		SELECT * FROM belanja b
+		inner join user u on u.pk_user = b.fk_user
+		where 1=1
+		<isNotNull property="kodeBelanja">  
+			and b.kode_belanja = #kodekBelanja:VARCHAR#
+		</isNotNull>
+		order by b.updated_date desc 
+	</select>
+	
+
+</sqlMap>

@@ -27,4 +27,5 @@
     <bean id="ItemHelperDAO" class="com.tokogame.dao.ItemHelperDAOImpl" autowire="byType"/>
     <bean id="CartHelperDAO" class="com.tokogame.dao.CartHelperDAOImpl" autowire="byType"/>
     <bean id="BelanjaDetailHelperDAO" class="com.tokogame.dao.BelanjaDetailHelperDAOImpl" autowire="byType"/>
+    <bean id="BelanjaHelperDAO" class="com.tokogame.dao.BelanjaHelperDAOImpl" autowire="byType"/>
 </beans>

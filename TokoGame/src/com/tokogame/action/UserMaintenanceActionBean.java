@@ -14,9 +14,11 @@ import net.sourceforge.stripes.action.UrlBinding;
 import net.sourceforge.stripes.integration.spring.SpringBean;
 
 import com.tokogame.domain.User;
+import com.tokogame.service.EmailValidatorImpl;
 import com.tokogame.service.PasswordEncryptorImpl;
 import com.tokogame.service.UserMaintenanceService;
 import com.tokogame.service.PasswordEncryptor;
+import com.tokogame.service.EmailValidator;
 
 /**
  * @author willyam surya
@@ -32,18 +34,35 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 	@SpringBean
 	private UserMaintenanceService userMaintenanceService;
 	
+	//function to create offset position paging of the table
+	private void makeOffset(String param) {
+		try { 
+			this.setOffset(Integer.parseInt(this.context.getRequest()
+					.getParameter(param)));
+		} catch (Exception e) {
+		}
+	} 
+	
 	@Override
 	@DefaultHandler
 	public Resolution show() {
 		// TODO Auto-generated method stub
-		return this.search();
+		return this.search();	
 	}
 	
 	public Resolution search(){
 		User user = new User();
-		listUser = userMaintenanceService.getUserList(user);
+		//show item list with paging
+		makeOffset("user_list.offset");
 		
+		listUser = userMaintenanceService.getUserList(user);
+		setSize(listUser.size());
 		return new ForwardResolution("/WEB-INF/pages/admin/user_maintenance.jsp");
+	}
+	
+	public Resolution test() {
+		// TODO Auto-generated method stub
+		return new ForwardResolution("/WEB-INF/pages/admin/user_maintenance_field.jsp");
 	}
 	
 	public Resolution add(){
@@ -65,64 +84,110 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 	}
 	
 	public Resolution save(){
+		PasswordEncryptor encrypt = new PasswordEncryptorImpl();
+		EmailValidator email = new EmailValidatorImpl();
 		if(user.getPkUser()==null){
-			if(user.getPassword()!=null)
-			{
-				PasswordEncryptor encrypt = new PasswordEncryptorImpl();
-				user.setUserLogin(user.getUserLogin());
+			//if(user.getPassword()!=null){
+			user.setUserLogin(user.getUserLogin());
+			if(userMaintenanceService.countUserLogin(user.getUserLogin()) > 0){
+				this.addGlobalError("validation.user.userlogin");
+				return this.test();
+			}
+			else if(userMaintenanceService.countUserLogin(user.getUserLogin()) <= 0){
 				user.setName(user.getName());
-				user.setPassword(encrypt.encrypt(user.getPassword()));
 				user.setHandphone(user.getHandphone());
-				user.setRole(user.getRole());
-				if (user.getActive() == null){
-					user.setActive(0);
-				}
+				user.setPassword(encrypt.encrypt(user.getPassword()));
+				if (user.getHandphone().length() >= 10){
+					user.setRole(user.getRole());
+					if (user.getActive() == null){
+						user.setActive(0);
+					}
 					else {
 						user.setActive(1);
+					}
+					if (email.email(user.getEmail()) == true){
+						user.setEmail(user.getEmail());
+						user.setAddress(user.getAddress());
+						userMaintenanceService.insertUser(user);
+						return this.show();
+					}
+					else if(email.email(user.getEmail()) == false){
+						this.addGlobalError("validation.user.email");
+						return this.test();
+					}
 				}
-				userMaintenanceService.insertUser(user);	
+				else if (user.getHandphone().length() < 10){
+					this.addGlobalError("validation.user.minlength.handphone");
+					return this.test();
+				}
 			}
 		}
-		else if(user.getPkUser()!=null)
-		{
-			if (user.getPassword() == null)
+		else if(user.getPkUser()!=null){
+			if (user.getPassword() == null){
+				user.setUserLogin(user.getUserLogin());
+				user.setName(user.getName());
+				user.setHandphone(user.getHandphone());
+				if (user.getHandphone().length() >= 10){
+					user.setRole(user.getRole());
+					if (user.getActive() == null)
+					{
+						user.setActive(0);
+					}
+					else
+					{
+						user.setActive(1);
+					}
+					if (email.email(user.getEmail()) == true){
+						user.setEmail(user.getEmail());
+						user.setAddress(user.getAddress());
+						userMaintenanceService.updateUserSelective(user);
+						return this.show();
+					}
+					else if(email.email(user.getEmail()) == false){
+						this.addGlobalError("validation.user.email");
+						return this.test();
+					}
+				}
+				else if (user.getHandphone().length() < 10){
+					this.addGlobalError("validation.user.minlength.handphone");
+					return this.test();
+				}
+			}
+			else if(user.getPassword() != null)
 			{
 				//PasswordEncryptor encrypt = new PasswordEncryptorImpl();
 				user.setUserLogin(user.getUserLogin());
 				user.setName(user.getName());
-				//user.setPassword(encrypt.encrypt(user.getPassword()));
-				user.setHandphone(user.getHandphone());
-				user.setRole(user.getRole());
-				if (user.getActive() == null)
-				{
-					user.setActive(0);
-				}
-				else
-				{
-					user.setActive(1);
-				}
-				userMaintenanceService.updateUserSelective(user);
-			}
-			else if(user.getPassword() != null)
-			{
-				PasswordEncryptor encrypt = new PasswordEncryptorImpl();
-				user.setUserLogin(user.getUserLogin());
-				user.setName(user.getName());
 				user.setPassword(encrypt.encrypt(user.getPassword()));
 				user.setHandphone(user.getHandphone());
-				user.setRole(user.getRole());
-				if (user.getActive() == null)
-				{
-					user.setActive(0);
+				if (user.getHandphone().length() >= 10){
+					user.setRole(user.getRole());
+					if (user.getActive() == null)
+					{
+						user.setActive(0);
+					}
+					else
+					{
+						user.setActive(1);
+					}
+					if (email.email(user.getEmail()) == true){
+						user.setEmail(user.getEmail());
+						user.setAddress(user.getAddress());
+						userMaintenanceService.updateUser(user);
+						return this.show();
+					}
+					else if(email.email(user.getEmail()) == false){
+						this.addGlobalError("validation.user.email");
+						return this.test();
+					}
 				}
-				else
-				{
-					user.setActive(1);
+				else if (user.getHandphone().length() < 10){
+					this.addGlobalError("validation.user.minlength.handphone");
+					return this.test();
 				}
-				userMaintenanceService.updateUser(user);
 			}
 		}
-		return this.show();
+		return show();
 	}
 
 	public Resolution cancel(){

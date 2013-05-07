@@ -32,8 +32,8 @@
         <!-- <table tableName="kategori"/> -->
 		<!-- <table tableName="koleksi"/> -->
 		<!-- <table tableName="koleksi_relation"/> -->
-		<table tableName="user"/>
-		<!-- <table tableName="belanja"/> -->
+		<!-- <table tableName="user"/> -->
+		<table tableName="belanja"/> 
 		<!-- <table tableName="belanja_detail"/>  -->
 		<!-- <table tableName="sequence"/> -->
 		        

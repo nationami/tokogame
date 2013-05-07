@@ -25,4 +25,6 @@ public interface UserMaintenanceService {
 	public void deleteUser(User user);
 
 	public void updateUserSelective(User user);
+	
+	public int countUserLogin(String userLogin);
 }

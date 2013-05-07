@@ -20,5 +20,7 @@
 	
 	<!-- ========================= 	HELPER 	========================= -->
 	<sqlMap resource="com/tokogame/sql/belanja_detail_helper_SqlMap.xml"/>
-    
+    <sqlMap resource="com/tokogame/sql/belanja_helper_SqlMap.xml"/>
+	
+	
 </sqlMapConfig>

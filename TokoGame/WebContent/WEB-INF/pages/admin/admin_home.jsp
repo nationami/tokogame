@@ -16,7 +16,7 @@
 				</div>
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/pembayaran"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>

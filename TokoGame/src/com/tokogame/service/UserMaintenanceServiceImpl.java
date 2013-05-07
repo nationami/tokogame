@@ -60,6 +60,18 @@ public class UserMaintenanceServiceImpl implements UserMaintenanceService{
 		int pkUser = user.getPkUser();
 		userDAO.deleteByPrimaryKey(pkUser);
 	}
+
+	@Override
+	public int countUserLogin(String userLogin) {
+		// TODO Auto-generated method stub
+		//String userLogin = user.getUserLogin();
+		UserExample userExample = new UserExample();
+		UserExample.Criteria criteria = userExample.createCriteria();
+		if (userLogin!=null){
+			criteria.andUserLoginEqualTo(userLogin);
+		}
+		return userDAO.countByExample(userExample);
+	}
 	
 	
 

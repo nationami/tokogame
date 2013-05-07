@@ -73,14 +73,17 @@ public class CartActionBean extends BaseActionBean{
 			format = "MB";
 		}
 		
+		buyingItem = (List<Item>) getSessionAttribute(UtilConstants.SESSION.BUYING_ITEM);
+		
 		Belanja belanja = new Belanja();
 		belanja.setFkUser(user.getPkUser());
 		belanja.setKodeBelanja(cartService.generateKodeBelanja(format));
 		belanja.setUpdatedDate(new Date());
+		belanja.setTotalItem(buyingItem.size());
 		
 		cartService.belanjaInsert(belanja);
 		
-		buyingItem = (List<Item>) getSessionAttribute(UtilConstants.SESSION.BUYING_ITEM);
+		
 		cartService.batchBelanjaDetail(belanja.getPkBelanja(), buyingItem);
 		
 		HashMap<String, Object> hashmap = new HashMap<String, Object>();
