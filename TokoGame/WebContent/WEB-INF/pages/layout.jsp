@@ -47,6 +47,7 @@
 
 <!-- *****************Link For Javascript***************** -->
 <script src="${contextPath}/js/common.js"></script>
+<script src="${contextPath}/js/jquery.multiselect2side.js"></script>
 
 <!-- *****************Link For CSS***************** -->
 <link href="${contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
@@ -54,6 +55,7 @@
 <link href="${contextPath}/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css" media='all'/>
 <link href="${contextPath}/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+<link href="${contextPath}/css/jquery.multiselect2side.css" rel="stylesheet" type="text/css" media='all'/>
 
 <!-- ********************Function Javascript********************* -->
 <script type="text/javascript">

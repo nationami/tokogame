@@ -72,8 +72,4 @@ public class UserMaintenanceServiceImpl implements UserMaintenanceService{
 		}
 		return userDAO.countByExample(userExample);
 	}
-	
-	
-
-	
 }
