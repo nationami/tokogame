@@ -15,6 +15,10 @@
       <param-name>ActionResolver.Packages</param-name>
       <param-value>com.tokogame.action</param-value>
     </init-param>
+    <init-param>
+      <param-name>LocalePicker.Locales</param-name>
+      <param-value>en_US</param-value>
+    </init-param>
   	<init-param>
       <param-name>ActionBeanContext.Class</param-name>
       <param-value>com.tokogame.action.BaseActionBeanContext</param-value>

@@ -16,6 +16,15 @@ h3{
 	margin: 0;
 }
 
+input.error,textarea.error,select.error,input.error[type="radio"] {
+	border: 1px solid #880000;
+	background-color: #FFDDDD;
+}
+
+label.error {
+	color: red;
+}
+
 #header-container{
 	padding: 5px 10px 10px 10px;
 	border-bottom: 3px solid black;
@@ -126,7 +135,7 @@ h3{
 }
 
 .inputBox{
-	width: 800px;
+	width: 1000px;
 	padding: 5px;
 	background-color: #f2f2f2;
 	border: 1px #C7C7C7 solid;
@@ -186,7 +195,7 @@ h3{
 .info-fieldset{
 	background-color: #f2f2f2;
 	height:190px;
-	width: 770px;
+	width: 900px;
 }
 
 .info-fieldset legend{

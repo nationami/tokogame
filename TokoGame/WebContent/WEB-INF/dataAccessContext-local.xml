@@ -22,10 +22,20 @@
     <bean id="BelanjaDAO" class="com.tokogame.dao.BelanjaDAOImpl" autowire="byType"/>
     <bean id="BelanjaDetailDAO" class="com.tokogame.dao.BelanjaDetailDAOImpl" autowire="byType"/>
     <bean id="SequenceDAO" class="com.tokogame.dao.SequenceDAOImpl" autowire="byType"/>
+    <bean id="ReturDAO" class="com.tokogame.dao.ReturDAOImpl" autowire="byType"/>
+    <bean id="PenjualanDAO" class="com.tokogame.dao.PenjualanDAOImpl" autowire="byType"/>
+    <bean id="KonfigurasiDAO" class="com.tokogame.dao.KonfigurasiDAOImpl" autowire="byType"/>
+    <bean id="PromoMainDAO" class="com.tokogame.dao.PromoMainDAOImpl" autowire="byType"/>
+    <bean id="PromoDetailDAO" class="com.tokogame.dao.PromoDetailDAOImpl" autowire="byType"/>
+    <bean id="PembelianDAO" class="com.tokogame.dao.PembelianDAOImpl" autowire="byType"/>
+    <bean id="PembelianDetailDAO" class="com.tokogame.dao.PembelianDetailDAOImpl" autowire="byType"/>
+    <bean id="OpnameDAO" class="com.tokogame.dao.OpnameDAOImpl" autowire="byType"/>
     
     <!-- ========================= 		DAO DEFINITIONS: HELPER 	========================= -->
     <bean id="ItemHelperDAO" class="com.tokogame.dao.ItemHelperDAOImpl" autowire="byType"/>
     <bean id="CartHelperDAO" class="com.tokogame.dao.CartHelperDAOImpl" autowire="byType"/>
     <bean id="BelanjaDetailHelperDAO" class="com.tokogame.dao.BelanjaDetailHelperDAOImpl" autowire="byType"/>
     <bean id="BelanjaHelperDAO" class="com.tokogame.dao.BelanjaHelperDAOImpl" autowire="byType"/>
+    <bean id="PromoHelperDAO" class="com.tokogame.dao.PromoHelperDAOImpl" autowire="byType"/>
+    <bean id="PembelianHelperDAO" class="com.tokogame.dao.PembelianHelperDAOImpl" autowire="byType"/>
 </beans>

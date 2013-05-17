@@ -62,6 +62,29 @@ $(function(){
 	
 /* End make button set */	
 	
+/* Make validation for alpha numeric */
+  	$('.validation-number').numeric();
+   	$('.validation-alphabet').alpha({allow:".' /"});		
+   	$('.validation-decimal').numeric({allow:"."});
+ 
+/* End validation for alpha numeric */	
+
+/* Make date time picker */
+   	$('#datepicker').datepicker({
+   		changeMonth: true,
+		changeYear: true,
+        dateFormat: "dd-MM-yy"
+     });
+   	
+   	$('#timepicker').timepicker({
+        showSecond: true,
+        timeFormat: 'hh:mm:ss',
+        stepHour: 1,
+        stepMinute: 1,
+        stepSecond: 1
+     });   	
+/* End date time picker */
+   	
 });
 
 /* Function to open the dialog */	

@@ -17,4 +17,8 @@ public interface EksporService {
 	public List<BelanjaDetail> getListBelanjaDetail(int pkBelanja);
 	
 	public List<HashMap> getListBelanjaDetailHelper(int pkBelanja);
+	
+	public List<HashMap> getListBelanjaDetailPK(int pkBelanja);
+	
+	public List<HashMap> getListBelanjaDetailRetur(int pkBelanja);
 }

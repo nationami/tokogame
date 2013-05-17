@@ -14,4 +14,6 @@ public interface BelanjaDetailHelperDAO {
 
 	public List<HashMap> selectDetailBelanja(HashMap<String,Object> param);
 	
+	public List<HashMap> selectDetailBelanjaRetur(HashMap<String,Object> param);
+	
 }

@@ -87,7 +87,7 @@
 		  				<label>Name</label>
 		  			</td>
 		  			<td>
-		  				<input type="text" name="user.name" value="${actionBean.user.name}" autofocus="autofocus" required="required"/>
+		  				<input type="text" name="user.name" value="${actionBean.user.name}" required="required"/>
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -100,7 +100,7 @@
 		  						<input type="password" name="user.password" value=""/>
 		  					</c:when>
 		  					<c:when test="${actionBean.user.pkUser == null}">
-		  						<input type="password" name="user.password" value="" autofocus="autofocus" required="required"/>
+		  						<input type="password" name="user.password" value="" required="required"/>
 		  					</c:when>
 		  				</c:choose>
 		  			</td>
@@ -111,7 +111,7 @@
 		  			</td>
 		  			<td>
 		  				<input type="text" id="handphone" name="user.handphone" maxlength="12" onkeypress="return checkNumber(this)"
-		  				value="${actionBean.user.handphone}" autofocus="autofocus" required="required"/>
+		  				value="${actionBean.user.handphone}" required="required" class="validation-number"/>
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -119,7 +119,7 @@
 		  				<label>E-mail</label>
 		  			</td>
 		  			<td>
-		  				<input type="text" id="email" name="user.email" value="${actionBean.user.email}" autofocus="autofocus" required="required"/>
+		  				<input type="email" id="email" name="user.email" value="${actionBean.user.email}" required="required"/>
 		  			</td>
 	  			</tr>
 	  			<tr>
@@ -127,7 +127,7 @@
 		  				<label>Address</label>
 		  			</td>
 		  			<td>		  			
-		  				<textarea id="address" name="user.address" cols="17" rows="5" autofocus="autofocus" required>${actionBean.user.address}</textarea>  
+		  				<textarea id="address" name="user.address" cols="17" rows="5" required>${actionBean.user.address}</textarea>  
 		  			</td>
 	  			</tr>
 	  			<tr>

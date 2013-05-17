@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="promo_helper">
+    	
+	<insert id="insertListPromo" parameterClass="java.util.List">
+		insert into promo_detail (fk_promo_main, fk_item, nilai_diskon, jenis_diskon)
+    	values 
+    	<iterate conjunction=",">
+	    	(#[].fkPromoMain:INTEGER#, #[].fkItem:INTEGER#, #[].nilaiDiskon:INTEGER#,
+	      	#[].jenisDiskon:VARCHAR#)
+      	</iterate>
+	</insert>
+	
+	
+	<select id="selectPromo" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+	    SELECT pm.*,
+			(select group_concat(it.item_name separator ', ') 
+			from promo_detail pd inner join item it on it.pk_item = pd.fk_item where pm.pk_promo_main = pd.fk_promo_main) item_list
+			FROM `promo_main` pm
+			WHERE 1=1
+	    
+	    
+	</select>
+</sqlMap>

@@ -34,7 +34,7 @@
 				</div>
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/pembelian"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>
@@ -75,7 +75,7 @@
 				</div>
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/opname"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>
@@ -88,7 +88,7 @@
 			<div class="icon-gap">
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/promoMaintenance"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>
@@ -97,7 +97,7 @@
 				</div>
 				<div class="icon-menu-inline">
 					<span>
-						<a href="${contextPath}/action/productList"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
+						<a href="${contextPath}/action/konfigurasi"><img alt="image" src="${contextPath}/img/shopping_cart.jpg" width="100px" height="100px" border="0"></a>
 					</span>
 					<span class="icon-menu-block"></span>
 					<span>

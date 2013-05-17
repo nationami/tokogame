@@ -41,15 +41,6 @@ public class ProductListActionBean extends BaseActionBean{
 	public Item item;
 	
 	
-	//function to create offset position paging of the table
-	private void makeOffset(String param) {
-		try {
-			this.setOffset(Integer.parseInt(this.context.getRequest()
-					.getParameter(param)));
-		} catch (Exception e) {
-		}
-	} 
-	
 	@Override
 	@DefaultHandler
 	public Resolution show() {

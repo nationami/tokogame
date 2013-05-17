@@ -9,6 +9,9 @@
 		<isNotNull property="kodeBelanja">  
 			and b.kode_belanja = #kodekBelanja:VARCHAR#
 		</isNotNull>
+		<isNotNull property="status">  
+			and b.status = #status:VARCHAR#
+		</isNotNull>
 		order by b.updated_date desc 
 	</select>
 	

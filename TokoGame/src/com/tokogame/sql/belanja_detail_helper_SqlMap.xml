@@ -12,7 +12,24 @@
 		<isNotNull property="jenisItem">  
 			and it.jenis_item = #jenisItem:VARCHAR#
 		</isNotNull>
-		order by it.item_name desc 
+		order by it.item_name asc 
+	</select>
+	
+	<select id="selectDetailBelanjaRetur" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+		SELECT it.*,bd.*,
+		IFNULL(re.retur_qty,0) retur_qty,
+		if((select bd.belanja_qty-rt.retur_qty from retur rt where rt.fk_belanja_detail = bd.pk_belanja_detail and bd.is_retur=1)='null',bd.belanja_qty-re.retur_qty, bd.belanja_qty) current_qty 
+		FROM belanja_detail bd
+		inner join item it on it.pk_item = bd.fk_item
+		left join retur re on re.fk_belanja_detail = bd.pk_belanja_detail
+		where 1=1
+		<isNotNull property="fkBelanja">  
+			and bd.fk_belanja = #fkBelanja:INTEGER#
+		</isNotNull>
+		<isNotNull property="jenisItem">  
+			and it.jenis_item = #jenisItem:VARCHAR#
+		</isNotNull>
+		order by it.item_name asc 
 	</select>
 	
 

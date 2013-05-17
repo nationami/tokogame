@@ -20,6 +20,14 @@
 <!-- *****************Link For Validate***************** -->
 <script src="${contextPath}/jquery/jquery.validate.js"></script>
 
+<!-- *****************Link For AlphaNumeric Validation***************** -->
+<script src="${contextPath}/jquery/jquery.alphanumeric.js"></script>
+<script src="${contextPath}/jquery/jquery.alphanumeric.pack.js"></script>
+
+<!-- *****************Link For Pattern***************** -->
+<script src="${contextPath}/jquery/jquery.maskedinput-1.3.1.js"></script>
+
+
 <!-- *****************Link For Xytable***************** -->
 <script src="${contextPath}/jquery/xytable/jquery.ba-bbq.min.js"></script>
 <script src="${contextPath}/jquery/xytable/jquery.tablesorter.min.js"></script>
@@ -31,6 +39,12 @@
 <script src="${contextPath}/js/video.js"></script>
 <script src="${contextPath}/js/video-quality.js"></script>
 
+<!-- *****************Link For Scroll***************** -->
+<script src="${contextPath}/jquery/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- *****************Link For Timepicker***************** -->
+<script src="${contextPath}/jquery/jquery.timepicker.js"></script>
+
 <!-- *****************Link For Javascript***************** -->
 <script src="${contextPath}/js/common.js"></script>
 
@@ -39,6 +53,7 @@
 <link href="${contextPath}/css/sidebarmenu.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css"/>
 <link href="${contextPath}/css/video-js.css" rel="stylesheet" type="text/css" media='all'/>
+<link href="${contextPath}/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
 
 <!-- ********************Function Javascript********************* -->
 <script type="text/javascript">

@@ -50,9 +50,9 @@ public class CartActionBean extends BaseActionBean{
 	@SuppressWarnings("unchecked")
 	public Resolution batal(){
 		buyingItem = (List<Item>) getSessionAttribute(UtilConstants.SESSION.BUYING_ITEM);
-		if(buyingItem.get(idx).getQty()>1){
-			int jumlah = buyingItem.get(idx).getQty()-1;
-			buyingItem.get(idx).setQty(jumlah);
+		if(buyingItem.get(idx).getItemQty()>1){
+			int jumlah = buyingItem.get(idx).getItemQty()-1;
+			buyingItem.get(idx).setItemQty(jumlah);
 		}
 		else{
 			buyingItem.remove(idx);

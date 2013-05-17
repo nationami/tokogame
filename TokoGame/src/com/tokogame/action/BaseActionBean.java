@@ -207,6 +207,15 @@ public abstract class BaseActionBean implements ActionBean, ValidationErrorHandl
 	}
 	
 	
+	//function to create offset position paging of the table
+	protected void makeOffset(String param) {
+		try { 
+			this.setOffset(Integer.parseInt(this.context.getRequest()
+					.getParameter(param)));
+		} catch (Exception e) {
+		}
+	}
+	
 
 	/**
 	 * Gets the ActionBeanContext set by Stripes during initialization.

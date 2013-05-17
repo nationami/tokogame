@@ -13,12 +13,15 @@ import com.tokogame.dao.ItemDAO;
 import com.tokogame.dao.ItemHelperDAO;
 import com.tokogame.dao.KategoriDAO;
 import com.tokogame.dao.KoleksiDAO;
+import com.tokogame.dao.OpnameDAO;
 import com.tokogame.domain.Item;
 import com.tokogame.domain.ItemExample;
 import com.tokogame.domain.Kategori;
 import com.tokogame.domain.KategoriExample;
 import com.tokogame.domain.Koleksi;
 import com.tokogame.domain.KoleksiExample;
+import com.tokogame.domain.Opname;
+import com.tokogame.domain.OpnameExample;
 
 /**
  * @author mardy jonathan
@@ -38,6 +41,9 @@ public class ProductListServiceImpl implements ProductListService{
 	
 	@Autowired
 	private ItemHelperDAO itemHelperDAO;
+	
+	@Autowired
+	private OpnameDAO opnameDAO;
 	
 	@Override
 	public List<Koleksi> getKoleksiList() {
@@ -62,15 +68,17 @@ public class ProductListServiceImpl implements ProductListService{
 		// TODO Auto-generated method stub
 		ItemExample itemExample = new ItemExample();
 		ItemExample.Criteria criteria = itemExample.createCriteria();
-		if(item.getFkKoleksi()!=0){
-			criteria.andFkKoleksiEqualTo(item.getFkKoleksi());
-		}
-		if(item.getFkKategori()!=0){
-			criteria.andFkKategoriEqualTo(item.getFkKategori());
-		}
-		if(item.getItemName()!=null && !("".equals(item.getItemName()))){
-			criteria.andItemNameLike("%"+item.getItemName()+"%");
-		}
+		if(item!=null){
+			if(item.getFkKoleksi()!=null && item.getFkKoleksi()!=0){
+				criteria.andFkKoleksiEqualTo(item.getFkKoleksi());
+			}
+			if(item.getFkKategori()!=null && item.getFkKategori()!=0){
+				criteria.andFkKategoriEqualTo(item.getFkKategori());
+			}
+			if(item.getItemName()!=null && !("".equals(item.getItemName()))){
+				criteria.andItemNameLike("%"+item.getItemName()+"%");
+			}
+		}		
 		itemExample.setOrderByClause(sorting+"item_name asc");
 		return itemDAO.selectByExample(itemExample);
 	}

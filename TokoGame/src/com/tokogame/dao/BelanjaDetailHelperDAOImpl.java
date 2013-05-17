@@ -21,4 +21,11 @@ public class BelanjaDetailHelperDAOImpl extends SqlMapClientDaoSupport implement
         return list;
 	}
 
+	@Override
+	public List<HashMap> selectDetailBelanjaRetur(HashMap<String, Object> param) {
+		// TODO Auto-generated method stub
+		List<HashMap> list = getSqlMapClientTemplate().queryForList("belanja_detail_helper.selectDetailBelanjaRetur", param);
+        return list;
+	}
+
 }

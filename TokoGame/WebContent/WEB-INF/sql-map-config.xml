@@ -17,10 +17,19 @@
 	<sqlMap resource="com/tokogame/sql/belanja_SqlMap.xml"/>
 	<sqlMap resource="com/tokogame/sql/belanja_detail_SqlMap.xml"/>
 	<sqlMap resource="com/tokogame/sql/sequence_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/retur_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/penjualan_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/konfigurasi_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/promo_main_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/promo_detail_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/pembelian_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/pembelian_detail_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/opname_SqlMap.xml"/>
 	
 	<!-- ========================= 	HELPER 	========================= -->
 	<sqlMap resource="com/tokogame/sql/belanja_detail_helper_SqlMap.xml"/>
     <sqlMap resource="com/tokogame/sql/belanja_helper_SqlMap.xml"/>
-	
+	<sqlMap resource="com/tokogame/sql/promo_helper_SqlMap.xml"/>
+	<sqlMap resource="com/tokogame/sql/pembelian_helper_SqlMap.xml"/>
 	
 </sqlMapConfig>

@@ -61,14 +61,14 @@ public class ViewDetailActionBean extends BaseActionBean{
 			}
 			
 			if(exists){
-				int jumlah = buyingItem.get(index).getQty()+1;
-				int totalHarga = buyingItem.get(index).getHarga() + harga;
-				buyingItem.get(index).setQty(jumlah);
-				buyingItem.get(index).setHarga(totalHarga);
+				int jumlah = buyingItem.get(index).getItemQty()+1;
+//				int totalHarga = buyingItem.get(index).getHarga() + harga;
+				buyingItem.get(index).setItemQty(jumlah);
+//				buyingItem.get(index).setHarga(totalHarga);
 			}
 			else{
 				item = viewDetailService.getItemByPK(itemId);
-				item.setQty(1);
+				item.setItemQty(1);
 				item.setHarga(harga);
 				buyingItem.add(item);
 			}

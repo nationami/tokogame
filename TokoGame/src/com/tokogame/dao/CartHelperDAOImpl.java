@@ -32,7 +32,8 @@ public class CartHelperDAOImpl extends SqlMapClientDaoSupport implements CartHel
 				belanjaDetail.setFkBelanja(pkBelanja);
 				for(Item data : listItem){
 					belanjaDetail.setFkItem(data.getPkItem());
-					belanjaDetail.setQty(data.getQty());
+					belanjaDetail.setBelanjaQty(data.getItemQty());
+					belanjaDetail.setHargaBelanja(data.getHarga());
 					executor.insert("belanja_detail.ibatorgenerated_insertSelective", belanjaDetail);
 				}
 				return new Integer(executor.executeBatch());

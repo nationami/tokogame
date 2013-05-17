@@ -27,5 +27,15 @@ public interface UtilConstants {
     	public String KODE_BELANJA = "kode_belanja";
     }
 	
+	public interface CONS {
+    	public int RETUR = 1;
+    	public int BATAL_RETUR = 0;
+    }
+	
+	public interface BELANJA_STATUS {
+    	public String PENDING = "PENDING";
+    	public String BAYAR = "BAYAR";
+    }
+	
 	
 }

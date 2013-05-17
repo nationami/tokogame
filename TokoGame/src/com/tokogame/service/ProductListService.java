@@ -8,6 +8,7 @@ import java.util.List;
 import com.tokogame.domain.Item;
 import com.tokogame.domain.Kategori;
 import com.tokogame.domain.Koleksi;
+import com.tokogame.domain.Opname;
 
 /**
  * @author mardy jonathan

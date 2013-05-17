@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="pembelian_helper">
+
+    <insert id="insertListPembelian" parameterClass="java.util.List">
+		insert into pembelian_detail (fk_pembelian, fk_item, harga_pembelian, pembelian_qty, keterangan)
+    	values 
+    	<iterate conjunction=",">
+	    	(#[].fkPembelian:INTEGER#, #[].fkItem:INTEGER#, #[].hargaPembelian:INTEGER#, #[].pembelianQty:INTEGER#,
+	      	#[].keterangan:VARCHAR#)
+      	</iterate>
+	</insert>
+	
+    <update id="updateMinusQtyItem" parameterClass="java.util.HashMap">
+	    update item it 
+		inner join pembelian_detail pd on it.pk_item = pd.fk_item
+		set it.item_qty = (it.item_qty-pd.pembelian_qty)
+		where pd.fk_pembelian = #fkPembelian:INTEGER#
+	</update>
+	
+    <update id="updatePlusQtyItem" parameterClass="java.util.HashMap">
+	    update item it 
+		inner join pembelian_detail pd on it.pk_item = pd.fk_item
+		set it.item_qty = (it.item_qty+pd.pembelian_qty)
+		where pd.fk_pembelian = #fkPembelian:INTEGER#
+	</update>
+	
+    <delete id="deleteDetailByFkPembelian" parameterClass="java.util.HashMap" >
+	  	delete from pembelian_detail
+		where fk_pembelian = #fkPembelian:INTEGER#
+	</delete>
+    
+	<select id="selectPembelian" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+	    SELECT pb.*,
+			(select group_concat(it.item_name separator ', ') 
+			from pembelian_detail pd inner join item it on it.pk_item = pd.fk_item where pb.pk_pembelian = pd.fk_pembelian) item_list
+			FROM pembelian pb
+			WHERE 1=1
+	    
+	    order by pb.tanggal_beli desc	
+	    
+	</select>
+</sqlMap>

@@ -47,8 +47,8 @@ public abstract class DateTimeUtil {
 	private static final Log	log			= LogFactory.getLog(DateTimeUtil.class);
 
 //	public static final String	FORMAT_DATE	= "dd/MM/yyyy";
-	public static final String	FORMAT_DATE	= "yyyy/MM/dd";
-	public static final String	FORMAT_TIME	= "HH:mm";
+	public static final String	FORMAT_DATE	= "dd-MMMM-yyyy";
+	public static final String	FORMAT_TIME	= "HH:mm:ss";
 
 	/**
 	 * Get current date
@@ -152,7 +152,7 @@ public abstract class DateTimeUtil {
 		try {
 			date = df.parse(dtStr);
 		} catch (ParseException pe) {
-			log.error("Unable to conver a string to date", pe);
+			log.error("Unable to convert a string to date", pe);
 		}
 		return date;
 	}

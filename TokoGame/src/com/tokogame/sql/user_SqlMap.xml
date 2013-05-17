@@ -93,6 +93,9 @@
     insert into user (pk_user, user_login, name, handphone, password, role, address, email, active)
     values (#pkUser:INTEGER#, #userLogin:VARCHAR#, #name:VARCHAR#, #handphone:VARCHAR#,
       #password:VARCHAR#, #role:VARCHAR#, #address:VARCHAR#, #email:VARCHAR#, #active:INTEGER#)
+      <selectKey type="post" keyProperty="pkUser">
+     	select max(pk_user) from user
+      </selectKey>
   </insert>
   <insert id="ibatorgenerated_insertSelective" parameterClass="com.tokogame.domain.User">
     <!--
@@ -161,6 +164,9 @@
       </isNotNull>
       )
     </dynamic>
+    <selectKey type="post" keyProperty="pkUser">
+     	select max(pk_user) from user
+      </selectKey>
   </insert>
   <select id="ibatorgenerated_countByExample" parameterClass="com.tokogame.domain.UserExample" resultClass="java.lang.Integer">
     <!--

@@ -45,4 +45,20 @@ public class EksporServiceImpl implements EksporService{
 		return belanjaDetailHelperDAO.selectDetailBelanja(map);
 	}
 
+	@Override
+	public List<HashMap> getListBelanjaDetailPK(int pkBelanja) {
+		// TODO Auto-generated method stub
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("fkBelanja", pkBelanja);
+		return belanjaDetailHelperDAO.selectDetailBelanja(map);
+	}
+
+	@Override
+	public List<HashMap> getListBelanjaDetailRetur(int pkBelanja) {
+		// TODO Auto-generated method stub
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		map.put("fkBelanja", pkBelanja);
+		return belanjaDetailHelperDAO.selectDetailBelanjaRetur(map);
+	}
+
 }

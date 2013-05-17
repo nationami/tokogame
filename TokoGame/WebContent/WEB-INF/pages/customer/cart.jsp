@@ -47,7 +47,7 @@
 		  			</td>
 		  			<td>
 		  				<input type="submit" name="submit" value="Submit"/>
-		  				<input type="button" name="cancel" value="Cancel" formnovalidate="formnovalidate" id="cancel"/>
+		  				<input type="button" name="cancel" value="Cancel" formnovalidate="formnovalidate" class="cancel"/>
 		  			</td>
 	  			</tr>
 	  		</table>
@@ -77,13 +77,13 @@
 								${buyingItem.fileSize}	
 							</td>
 							<td>
-								${buyingItem.qty}	
+								${buyingItem.itemQty}	
 							</td>
 							<td style="text-align: right;">
-								${buyingItem.harga}	
+								${buyingItem.itemQty*buyingItem.harga}	
 							</td>
 						</tr>
-						<c:set var="totalHarga" value="${buyingItem.harga+totalHarga}"></c:set>
+						<c:set var="totalHarga" value="${(buyingItem.qty*buyingItem.harga)+totalHarga}"></c:set>
 					</c:forEach>
 				</table>
 				<table style="width: 100%; text-align: right;" cellpadding="1" cellspacing="1">
@@ -127,7 +127,7 @@
 					$('#dialog-confirm').dialog('open');
 				});
 				
-				$('#cancel').click(function(){
+				$('.cancel').click(function(){
 					$('#dialog-confirm').dialog('close');
 				});
 				
