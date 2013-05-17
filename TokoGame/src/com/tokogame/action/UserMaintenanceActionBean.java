@@ -85,7 +85,6 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 		PasswordEncryptor encrypt = new PasswordEncryptorImpl();
 		EmailValidator email = new EmailValidatorImpl();
 		if(user.getPkUser()==null){
-			//if(user.getPassword()!=null){
 			user.setUserLogin(user.getUserLogin());
 			if(userMaintenanceService.countUserLogin(user.getUserLogin()) > 0){
 				this.addGlobalError("validation.user.userlogin");
@@ -153,7 +152,6 @@ public class UserMaintenanceActionBean extends BaseActionBean{
 			}
 			else if(user.getPassword() != null)
 			{
-				//PasswordEncryptor encrypt = new PasswordEncryptorImpl();
 				user.setUserLogin(user.getUserLogin());
 				user.setName(user.getName());
 				user.setPassword(encrypt.encrypt(user.getPassword()));

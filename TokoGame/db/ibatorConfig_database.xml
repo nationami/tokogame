@@ -28,14 +28,22 @@
         </daoGenerator>
 			
 
-        <!-- <table tableName="item"/> -->
+        <!-- <table tableName="item"/> -->  
         <!-- <table tableName="kategori"/> -->
 		<!-- <table tableName="koleksi"/> -->
-		<table tableName="koleksi_relation"/>
+		<!-- <table tableName="koleksi_relation"/> -->
 		<!-- <table tableName="user"/> -->
-		<!-- <table tableName="belanja"/> --> 
-		<!-- <table tableName="belanja_detail"/>  -->
+		<!-- <table tableName="belanja"/>   -->
+		<!-- <table tableName="belanja_detail"/>-->
 		<!-- <table tableName="sequence"/> -->
+		<!-- <table tableName="retur"/> -->
+		<!-- <table tableName="penjualan"/> -->
+		<!-- <table tableName="konfigurasi"/> -->
+		<!-- <table tableName="promo_main"/> -->
+		<!-- <table tableName="promo_detail"/> -->
+		<!-- <table tableName="pembelian"/> -->
+		<table tableName="pembelian_detail"/>
+		<!-- <table tableName="opname"/> -->
 		        
 	</ibatorContext>
 </ibatorConfiguration>
